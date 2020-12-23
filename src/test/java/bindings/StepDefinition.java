@@ -32,25 +32,29 @@ public class StepDefinition
 
 
     @Given("^I navigate to QA Revealed homepage$")
-    public void i_navigate_to_QA_Revealed_homepage() throws Throwable {
+    public void i_navigate_to_QA_Revealed_homepage()
+    {
         // Write code here that turns the phrase above into concrete actions
         driver.get("https://www.qarevealed.com/");
     }
 
     @When("^I click on Nas tim link in menu$")
-    public void i_click_on_Nas_tim_link_in_menu() throws Throwable {
+    public void i_click_on_Nas_tim_link_in_menu()
+    {
         // Write code here that turns the phrase above into concrete actions
         WebElement nasTim = driver.findElement(By.id("comp-kggecc8g4"));
         nasTim.click();
     }
 
     @Then("^page with team members is opened$")
-    public void page_with_team_members_is_opened() throws Throwable {
+    public void page_with_team_members_is_opened() throws Throwable
+    {
         // Write code here that turns the phrase above into concrete actions
         wdWait.until(ExpectedConditions.presenceOfElementLocated(By.id("comp-kggf11xo1")));
         WebElement title = driver.findElement(By.id("comp-kggf11xo1"));
         System.out.println(title.getText());
         Assert.assertTrue(title.getText().contains("NAŠ TIM"));
-        Thread.sleep(4000);
+        Assert.assertTrue(driver.getCurrentUrl().contains("https://www.qarevealed.com/nas-tim"));
+        Thread.sleep(4000); // left for visual confirmation
     }
 }
