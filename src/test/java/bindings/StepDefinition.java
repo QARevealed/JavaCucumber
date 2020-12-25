@@ -42,7 +42,7 @@ public class StepDefinition
     public void i_click_on_Nas_tim_link_in_menu()
     {
         // Write code here that turns the phrase above into concrete actions
-        WebElement nasTim = driver.findElement(By.id("comp-kggecc8g4"));
+        WebElement nasTim = driver.findElement(By.id("comp-kggecc8g5label"));
         nasTim.click();
     }
 
