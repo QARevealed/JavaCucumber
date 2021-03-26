@@ -7,9 +7,10 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"html:reports/cucumber-html-report",
-                "json:reports/cucumber.json",
+        plugin = {"html:target/cucumber-reports/cucumber.html",
+        "json:target/cucumber-reports/cucumber.json",
                 "pretty"},
+        monochrome = true,
         tags = {"@runit,@run","~@ignore"},
         features = {"src/test/resources"},
         glue = {"bindings"}
