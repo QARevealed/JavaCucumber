@@ -23,11 +23,11 @@ public class QARevealedHomePage extends BasePage
         PageFactory.initElements(driver, this);
     }
 
-    public void clickOnContactUs()
-    {
+    public void clickOnContactUs() throws InterruptedException {
         List<WebElement> navMenuItems = navMenuHolder.findElements(By.tagName("li"));
         WebElement contactUsTab = navMenuItems.get(2);
         click(contactUsTab);
+        Thread.sleep(2000); // for visual confirmation
 
     }
 }

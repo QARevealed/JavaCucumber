@@ -32,17 +32,14 @@ public class StepDefinitions {
     }
 
     @When("^I click on contact us tab in menu$")
-    public void i_click_on_Nas_tim_link_in_menu()
-    {
+    public void i_click_on_Nas_tim_link_in_menu() throws InterruptedException {
         // Write code here that turns the phrase above into concrete actions
         base.getRevealedHomePage().clickOnContactUs();
     }
 
-    @Then("^page with team members is opened$")
-    public void page_with_team_members_is_opened() throws Throwable
-    {
-
+    @Then("relevant information is shown")
+    public void relevantInformationIsShown() {
+        base.getContactUsPage().checkTitle();
+        base.getContactUsPage().openHours();
     }
-
-
 }
