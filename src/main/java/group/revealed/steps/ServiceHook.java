@@ -21,7 +21,7 @@ public class ServiceHook {
     @After
     public void after(Scenario scenario) {
         if (!scenario.isFailed()) {
-            Slack.postSlackTextMessage(":white_check_mark: *" + scenario.getName() + "* :white_check_mark:", SlackChannel.QA_disco);
+       //     Slack.postSlackTextMessage(":white_check_mark: *" + scenario.getName() + "* :white_check_mark:", SlackChannel.QA_disco);
         }
         // send results to SauceLabs/BrowserStack
         if ("SauceLabs".equals(configuration.getServiceProvider())) {
